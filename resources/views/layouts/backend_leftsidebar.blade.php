@@ -44,6 +44,11 @@
                     <i class="fa fa-list-ul"></i>
                     <span>Categorias</span></a>
             </li>
+            <li><a href="{{ route('category.create') }}">
+                    <i class="fa fa-sticky-note-o"></i>
+                    <span>Nueva Categoria</span></a>
+            </li>
+
             <li><a href="#">
                     <i class="fa fa-tags"></i>
                     <span>Etiquetas</span></a>
