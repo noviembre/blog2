@@ -27,8 +27,8 @@
 
             <li class="header">MAIN NAVIGATION</li>
             <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-dashboard"></i> <span>Inicio</span>
+                <a href="{{ route('home') }}">
+                    <i class="fa fa-home"></i> <span>Inicio</span>
                 </a>
             </li>
 

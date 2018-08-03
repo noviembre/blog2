@@ -4,12 +4,20 @@
 
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
+    <div class="content-wrapper" style="min-height: 1126px;">
+
         <section class="content-header">
 
             <h1>Post</h1>
 
+            <ol class="breadcrumb">
+                <li><a href="{{ route('home') }}">
+                        <i class="fa fa-home"></i>
+                        Inicio
+                    </a></li>
+                <li><a href="#">Post</a></li>
+                <li class="active">Crear</li>
+            </ol>
         </section>
 
 
@@ -19,7 +27,10 @@
 
             <div class="row">
                 <!-- left column -->
+                @include('admin.includes.errors')
                 <div class="col-md-6">
+
+
 
                     <!-- general form elements -->
                     <div class="box box-primary">
