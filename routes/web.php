@@ -18,3 +18,27 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+
+/*
+|--------------------------------------------------------------------------
+| G R U P O    -   A D M I N
+|--------------------------------------------------------------------------
+|
+|
+|
+*/
+Route::group(['prefix' => 'admin', 'middleware'=> 'auth' ], function (){
+
+    #---------------------------------------
+    #------------------------ POST ---------
+    Route::get('/post/create', [
+        'uses' => 'PostsController@create',
+        'as' => 'post.create'
+    ]);
+
+    Route::post('/post/store', [
+        'uses' => 'PostsController@store',
+        'as' => 'post.store'
+    ]);
+});
