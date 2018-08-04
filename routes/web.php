@@ -69,4 +69,10 @@ Route::group(['prefix' => 'admin', 'middleware'=> 'auth' ], function (){
         'as' => 'category.store'
     ]);
 
+    #================= NOTA ==========
+    #------- TOCA:
+    #------- blog/ commit /08 creando las categorias
+    #------- video 28. categories
+    #-------
+
 });
