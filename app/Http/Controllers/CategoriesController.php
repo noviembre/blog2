@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
-
+use Illuminate\Support\Facades\Session;
 class CategoriesController extends Controller
 {
 
@@ -28,6 +28,21 @@ class CategoriesController extends Controller
         $category = new Category();
         $category->title = $request->title;
         $category->save();
-        return redirect()->back();
+        return redirect()->route('categories');
+    }
+
+    public function edit($id)
+    {
+        $category = Category::find($id);
+        return view('admin.categories.edit')->with('category',$category);
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        $category = Category::find($id);
+        $category->title = $request->title;
+        $category->save();
+        return redirect()->route('categories');
     }
 }

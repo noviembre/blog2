@@ -49,7 +49,7 @@
                             <tr>
                                 <td>{{$category->id}}</td>
                                 <td>{{$category->title}}</td>
-                                <td>editar </td>
+                                <td><a href="{{ route('category.edit', ['id' => $category->id ]) }}" class="btn btn-info">Edit</a>  </td>
 
                                 <td>
                                     eliminar
@@ -70,8 +70,5 @@
 
     </div>
     <!-- /.content-wrapper -->
-
-
-
 
 @stop
