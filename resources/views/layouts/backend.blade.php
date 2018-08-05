@@ -18,6 +18,8 @@
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset('assets/dist/css/skins/_all-skins.min.css')}}">
 
+    <link href="{{ asset('toastr/css/toastr.min.css') }}" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -231,6 +233,13 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('assets/dist/js/demo.js') }}"></script>
 
+<!-- Scripts para las alertas  -->
+<script src="{{ asset('toastr/js/toastr.min.js') }}"></script>
+<script>
+    @if(Session::has('success'))
+toastr.success("{{ Session::get('success') }}")
+    @endif
+</script>
 
 </body>
 

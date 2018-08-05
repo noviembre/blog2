@@ -28,6 +28,7 @@ class CategoriesController extends Controller
         $category = new Category();
         $category->title = $request->title;
         $category->save();
+        Session::flash('success','You successfully create a Category');
         return redirect()->route('categories');
     }
 
@@ -43,6 +44,7 @@ class CategoriesController extends Controller
         $category = Category::find($id);
         $category->title = $request->title;
         $category->save();
+        Session::flash('success','You successfully Updated a Category');
         return redirect()->route('categories');
     }
 
@@ -50,6 +52,7 @@ class CategoriesController extends Controller
     {
         $category = Category::find($id);
         $category->delete();
+        Session::flash('success','You successfully Deleted the Category');
         return redirect()->route('categories');
     }
 }
