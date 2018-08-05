@@ -15,6 +15,12 @@ class Post extends Model
         'title', 'contenido', 'category_id','featured','slug'
     ];
 
+    public function getFeaturedAttribute($featured)
+    {
+        return asset($featured);
+    }
+
+
     protected $dates  = ['deleted_at'];
 
     // un post solo puede pertenecer a una sola categoria

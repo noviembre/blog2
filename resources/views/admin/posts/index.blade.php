@@ -51,7 +51,9 @@
                         @foreach($posts as $post)
                             <tr>
                                 <td>{{$post->id}}</td>
-                                <td>image</td>
+                                <td>
+                                    <img src="{{ $post->featured }}" alt="{{ $post->title }}" width="90px" height="50px">
+                                </td>
                                 <td>{{$post->title}}</td>
                                 <td>editar</td>
                                 <td>dormir</td>
