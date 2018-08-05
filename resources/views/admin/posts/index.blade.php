@@ -56,7 +56,9 @@
                                 </td>
                                 <td>{{$post->title}}</td>
                                 <td>editar</td>
-                                <td>dormir</td>
+                                <td>
+                                    <a href="{{ route('post.delete', ['id' => $post->id]) }}" class="btn btn-danger">Dormir</a>
+                                </td>
 
                             </tr>
                         @endforeach
