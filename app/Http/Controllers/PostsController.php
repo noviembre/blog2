@@ -16,8 +16,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('admin.posts.index')->with('posts',Post::all());
-
+        return view('admin.posts.index')
+            ->with('posts',Post::all());
     }
 
     /**
@@ -27,8 +27,17 @@ class PostsController extends Controller
      */
     public function create()
     {
+        $categories = Category::all();
+
+        if ($categories->count()==0)
+        {
+            Session::flash('info','You must have some categories before attempting to create a post');
+            return redirect()->back();
+        }
+
         return view('admin.posts.create')
-            ->with('categories', Category::all());
+            ->with('categories', $categories);
+
     }
 
     /**
