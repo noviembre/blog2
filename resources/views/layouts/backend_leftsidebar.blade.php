@@ -32,13 +32,13 @@
                 </a>
             </li>
 
-            <li><a href="#">
+            <li><a href="{{ route('posts') }}">
                     <i class="fa fa-sticky-note-o"></i>
                     <span>Posts</span></a>
             </li>
             <li><a href="{{ route('post.create') }}">
                     <i class="fa fa-sticky-note-o"></i>
-                    <span>Nuevo Posts</span></a>
+                    <span>Nuevo Post</span></a>
             </li>
             <li><a href="#">
                     <i class="fa fa-list-ul"></i>
