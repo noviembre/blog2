@@ -82,6 +82,12 @@ Route::group(['prefix' => 'admin', 'middleware'=> 'auth' ], function (){
         'as' => 'category.update'
     ]);
 
+    // borrar categoria
+    Route::get('/category/delete/{id}',[
+        'uses' => 'CategoriesController@destroy',
+        'as' => 'category.delete'
+    ]);
+
     #================= NOTA ==========
     #------- TOCA:
     #------- blog/ commit /08 creando las categorias
