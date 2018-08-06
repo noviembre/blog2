@@ -28,4 +28,11 @@ class Post extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function tags()
+    {
+        //Tag  pertenece a muchas categorias
+        // el nombre de la clase osea tags db ser en plural
+        return $this->belongsToMany(Tag::class);
+    }
 }
