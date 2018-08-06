@@ -44,6 +44,9 @@
                         </tr>
                         </thead>
                         <tbody>
+
+                        @if($posts->count()> 0)
+
                         @foreach($posts as $post)
                             <tr>
                                 <td>{{$post->id}}</td>
@@ -61,6 +64,12 @@
 
                             </tr>
                         @endforeach
+                        @else
+                            <tr>
+                                <th colspan="5" class="text-center text-danger"> No trashed Found</th>
+                            </tr>
+
+                        @endif
 
                         </tbody>
                     </table>
