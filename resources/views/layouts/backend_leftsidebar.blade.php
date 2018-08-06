@@ -40,6 +40,14 @@
                     <i class="fa fa-sticky-note-o"></i>
                     <span>Nuevo Post</span></a>
             </li>
+
+            <li>
+                <a href="{{ route('posts.trashed') }}">
+                    <i class="fa fa-list-ul"></i>
+                    <span>Post Inactivos</span>
+                </a>
+            </li>
+
             <li><a href="#">
                     <i class="fa fa-list-ul"></i>
                     <span>Categorias</span></a>

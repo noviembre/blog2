@@ -60,6 +60,17 @@ Route::group(['prefix' => 'admin', 'middleware'=> 'auth' ], function (){
         'as' => 'post.delete'
     ]);
 
+    // listar dormilones
+    Route::get('/posts/trashed', [
+        'uses' => 'PostsController@trashed',
+        'as' => 'posts.trashed'
+    ]);
+    // eliminar dormilones
+    Route::get('/posts/kill/{id}', [
+        'uses' => 'PostsController@kill',
+        'as' => 'posts.kill'
+    ]);
+
 
 
 
