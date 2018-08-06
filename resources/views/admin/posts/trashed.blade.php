@@ -52,7 +52,8 @@
                                 </td>
                                 <td>{{$post->title}}</td>
 
-                                <td>Restaurar
+                                <td>
+                                    <a href="{{ route('posts.restore', ['id' => $post->id]) }}" class="btn btn-success">Restaurar</a>
                                 </td>
                                 <td>
                                     <a href="{{ route('posts.kill', ['id' => $post->id]) }}" class="btn btn-danger">Eliminar</a>

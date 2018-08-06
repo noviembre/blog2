@@ -135,4 +135,12 @@ class PostsController extends Controller
         Session::flash('success','Post deleted permanently');
         return redirect()->back();
     }
+
+    public function restore($id)
+    {
+        $post = Post::withTrashed()->where('id', $id)->first();
+        $post->restore();
+        Session::flash('success','Post restored successfully');
+        return redirect()->route('posts');
+    }
 }

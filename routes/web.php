@@ -71,6 +71,12 @@ Route::group(['prefix' => 'admin', 'middleware'=> 'auth' ], function (){
         'as' => 'posts.kill'
     ]);
 
+    //despertar un a un dormilon
+    Route::get('/posts/restore/{id}', [
+        'uses' => 'PostsController@restore',
+        'as' => 'posts.restore'
+    ]);
+
 
 
 
