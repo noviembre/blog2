@@ -166,6 +166,40 @@ Route::group(['prefix' => 'admin', 'middleware'=> 'auth' ], function (){
         'as' => 'tag.delete'
     ]);
 
+
+
+    //================= USERS ================
+    // listar user
+    Route::get('/users',[
+        'uses' => 'UsersController@index',
+        'as' => 'users'
+    ]);
+    //Crear user
+    Route::get('/user/create',[
+        'uses' => 'UsersController@create',
+        'as' => 'user.create'
+    ]);
+    //
+    Route::post('/user/store',[
+        'uses' => 'UsersController@store',
+        'as' => 'user.store'
+    ]);
+    //editar user
+    Route::get('/user/edit/{id}',[
+        'uses' => 'UsersController@edit',
+        'as' => 'user.edit'
+    ]);
+    //Actualizar user
+    Route::post('/user/update/{id}',[
+        'uses' => 'UsersController@update',
+        'as' => 'user.update'
+    ]);
+    //editar user
+    Route::get('/user/delete/{id}',[
+        'uses' => 'UsersController@destroy',
+        'as' => 'user.delete'
+    ]);
+
     #================= NOTA ==========
     #------- TOCA:
     #------- blog/ commit /08 creando las categorias
