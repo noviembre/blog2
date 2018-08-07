@@ -13,8 +13,7 @@
 
 Route::get('/test', function (){
 
-    return App\Category::find(1)->posts;
-
+    dd (App\Category::find(1)->posts());
 });
 
 Route::get('/', function () {
