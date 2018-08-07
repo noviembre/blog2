@@ -2,14 +2,20 @@
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Tests
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+|esta function busca todos los post que pertenescan a la categoria 1
+|
+|
 |
 */
+
+Route::get('/test', function (){
+
+    return App\Category::find(1)->posts;
+
+});
 
 Route::get('/', function () {
     return view('welcome');
