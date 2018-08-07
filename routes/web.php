@@ -5,15 +5,15 @@
 | Tests
 |--------------------------------------------------------------------------
 |
-|esta function busca todos los post que pertenescan a la categoria 1
-|
-|
+|esta function busca todos los post que pertenescan a la categoria 1:
+|MUESTRA LA COLENCION DE ARRAYS QUE TIENE DICHA CATEGORIA.
+|en esta prueba se ve mas claro cuantos post pertenecen a tal categoria.
 |
 */
 
 Route::get('/test', function (){
 
-    dd (App\Category::find(1)->posts());
+    dd (App\Category::find(1)->posts);
 });
 
 Route::get('/', function () {
