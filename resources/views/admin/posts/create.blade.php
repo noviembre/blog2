@@ -68,6 +68,20 @@
 
 
                                 <div class="form-group">
+
+                                    <label for="tag">Select Tags</label>
+
+                                    @foreach($tags as $tag)
+                                        <div class="checkbox">
+                                            <label>
+                                                <input value="{{ $tag->id }}" name="tags[]" type="checkbox">{{ $tag->tag }}
+                                            </label>
+                                        </div>
+                                    @endforeach
+                                </div>
+
+
+                                <div class="form-group">
                                     <label for="exampleInputFile">Imagen</label>
                                     <input name="featured" type="file" id="exampleInputFile">
 
