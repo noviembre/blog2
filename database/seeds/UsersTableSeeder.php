@@ -15,14 +15,14 @@ class UsersTableSeeder extends Seeder
         $user = App\User::create([
            'name' => 'Manu',
            'email' => 'm@ya.com',
-           'password' => bcrypt('password'),
+           'password' => bcrypt('123456'),
             'admin'=> 1
        ]);
 
         # creando perfil para el admin
         App\Profile::create([
            'user_id' => $user->id,
-            'avatar'=> 'uploads/avatars/avatar_admin.png',
+            'avatar'=> 'avatars/avatar_admin.png',
             'about' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid consectetur consequuntur, ea eaque eius eos exercitationem inventore laboriosam laudantium magnam modi numquam quam quos rem rerum sequi veritatis voluptatem.',
             'facebook'=> 'facebook.com',
             'youtube' => 'youtube.com'

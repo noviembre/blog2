@@ -200,6 +200,19 @@ Route::group(['prefix' => 'admin', 'middleware'=> 'auth' ], function (){
         'as' => 'user.delete'
     ]);
 
+
+    //=============== ADMIN ================
+    Route::get('/user/admin/{id}',[
+        'uses' => 'UsersController@admin',
+        'as' => 'user.admin'
+    ]);
+    //Retirar permisos de Admin
+    Route::get('/user/not-admin/{id}',[
+        'uses' => 'UsersController@not_admin',
+        'as' => 'user.not.admin'
+    ]);
+
+
     #================= NOTA ==========
     #------- TOCA:
     #------- blog/ commit /08 creando las categorias
