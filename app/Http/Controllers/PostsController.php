@@ -104,8 +104,10 @@ class PostsController extends Controller
     {
         //Encontrar post que no estan dormidos
         $post = Post::find($id);
-        return view('admin.posts.edit')
-            ->with('post', $post)->with('categories', Category::all());
+
+        return view('admin.posts.edit')->with('post', $post)
+            ->with('categories', Category::all())
+            ->with('tags', Tag::all());
     }
 
     /**
@@ -139,6 +141,9 @@ class PostsController extends Controller
         $post->title = $request->title;
         $post->contenido = $request->contenido;
         $post->category_id = $request->category_id;
+
+        // guardar tags editados
+        $post->tags()->sync($request->tags);
         $post->save();
 
         Session::flash('success','Post was Updated successfully');
