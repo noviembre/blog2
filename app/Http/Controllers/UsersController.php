@@ -66,4 +66,13 @@ class UsersController extends Controller
         Session::flash('success','Successfully changed user permissions');
         return redirect()->back();
     }
+
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        $user->profile->delete();
+        $user->delete();
+        Session::flash('success','User Deleted');
+        return redirect()->back();
+    }
 }
