@@ -214,6 +214,20 @@ Route::group(['prefix' => 'admin', 'middleware'=> 'auth' ], function (){
     ]);
 
 
+    //=============== PROFILES ===========
+    #profile listar
+    Route::get('/user/profile',[
+        'uses' => 'ProfilesController@index',
+        'as' => 'user.profile'
+    ]);
+
+    #profile editar
+    Route::post('/user/profile/update',[
+        'uses' => 'ProfilesController@update',
+        'as' => 'user.profile.update'
+    ]);
+
+
     #================= NOTA ==========
     #------- TOCA:
     #------- blog/ commit /08 creando las categorias

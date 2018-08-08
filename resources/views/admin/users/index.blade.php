@@ -42,7 +42,7 @@
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                         <tr>
-                            <th>ID</th>
+
                             <th>Image</th>
                             <th>Name</th>
                             <th>Permissions</th>
@@ -56,17 +56,19 @@
 
                             @foreach($users as $user)
                                 <tr>
-                                    <td>{{ $user->id }}</td>
                                     <td>
-                                        <img src="{{ asset($user->profile->avatar) }}" alt="" width="60px" height="60px" style="border-radius: 50%">
+                                        no image
+
                                     </td>
                                     <td>{{ $user->name }}</td>
                                     <td>
                                         @if($user->admin)
-                                            <a href="{{ route('user.not.admin',['id'=> $user->id]) }}" class="btn btn-danger btn-xs">Remove Admin</a>
-                                        @else
-                                            <a href="{{ route('user.admin',['id'=> $user->id]) }}" class="btn btn-success btn-xs">Make Admin</a>
-                                        @endif
+                                    <a href="{{ route('user.not.admin',['id'=> $user->id]) }}" class="btn btn-danger btn-xs">Remove Admin</a>
+                                @else
+                                    <a href="{{ route('user.admin',['id'=> $user->id]) }}" class="btn btn-success btn-xs">Make Admin</a>
+                                @endif
+
+
                                     </td>
                                     <td>Delete</td>
 
