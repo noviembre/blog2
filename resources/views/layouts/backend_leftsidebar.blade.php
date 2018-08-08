@@ -62,10 +62,12 @@
                     <span>Etiquetas</span></a>
             </li>
 
-            <li><a href="#">
+            @if(Auth::user()->admin)
+            <li><a href="{{ route('users') }}">
                     <i class="fa fa-users"></i>
                     <span>Users</span></a>
             </li>
+            @endif
 
             <li><a href="#">
                     <i class="fa fa-user-plus"></i>
