@@ -51,6 +51,12 @@ class CategoriesController extends Controller
     public function destroy($id)
     {
         $category = Category::find($id);
+        # borrar categoria en cascada
+        foreach ($category->posts as $post){
+            # a. $post->delete() para eliminar la categoria y dormir el post
+            # b. $post->forceDelete() para eliminar tanto la cat como el post
+            $post->forceDelete();
+        }
         $category->delete();
         Session::flash('success','You successfully Deleted the Category');
         return redirect()->route('categories');
