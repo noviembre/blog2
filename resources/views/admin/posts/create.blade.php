@@ -90,7 +90,7 @@
 
                                 <div class="form-group">
                                     <label>Contenido</label>
-                                    <textarea name="contenido" class="form-control" rows="3"></textarea>
+                                    <textarea name="contenido" class="form-control" rows="3" id="contenido"></textarea>
                                 </div>
 
                             </div>
@@ -116,5 +116,25 @@
 
 
 
+
+@stop
+
+
+@section('styles')
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+
+@stop
+
+
+@section('scripts')
+    <!-- Scripts para Editor de texto  -->
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#contenido').summernote();
+        });
+    </script>
 
 @stop
