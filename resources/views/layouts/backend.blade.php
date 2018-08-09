@@ -171,9 +171,11 @@
                             </li>
                             <!-- Menu Footer-->
                             <li class="user-footer">
+                                @if(Auth::user()->admin)
                                 <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    <a href="{{ route('settings') }}" class="btn btn-default btn-flat">Settings</a>
                                 </div>
+                                @endif
                                 <div class="pull-right">
                                     <a href="#" class="btn btn-default btn-flat">
                                         Salir
