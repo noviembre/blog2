@@ -16,9 +16,23 @@ Route::get('/test', function (){
     return App\Post::find(1)->category;
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+/*
+|--------------------------------------------------------------------------
+| F R O N T E N D    -   F I L E S
+|--------------------------------------------------------------------------
+|
+|Contiene archivos que se usa en el frontend
+|
+*/
+Route::get('/', [
+
+    # ----Index
+   'uses' => 'FrontEndController@index',
+    'as' => 'index'
+
+]);
 
 Auth::routes();
 
