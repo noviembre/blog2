@@ -37,7 +37,7 @@ Route::get('/', [
 
 
 #======== Detalles del Post ==================
-Route::get('/{slug}', [
+Route::get('/post/{slug}', [
     'uses' => 'FrontEndController@singlePost',
     'as' => 'post.single'
 ]);
