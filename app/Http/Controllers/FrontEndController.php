@@ -23,7 +23,16 @@ class FrontEndController extends Controller
             ->with('categories', Category::take(5)->get())
 
             #============ Mostrar el primer post ===================
-            ->with('first_post', Post::orderBy('created_at', 'desc')->first());
+            ->with('first_post', Post::orderBy('created_at', 'desc')->first())
+
+            #============ Mostrar el segundo post ==================
+            ->with('second_post',Post::orderBy('created_at','desc')
+                ->skip(1)->take(1)->get()->first())
+
+            #============ Mostrar el tercer post ===================
+            ->with('third_post',Post::orderBy('created_at','desc')
+                    ->skip(2)->take(1)->get()->first());
     }
+
 
 }
