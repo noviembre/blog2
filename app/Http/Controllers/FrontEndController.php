@@ -31,7 +31,17 @@ class FrontEndController extends Controller
 
             #============ Mostrar el tercer post ===================
             ->with('third_post',Post::orderBy('created_at','desc')
-                    ->skip(2)->take(1)->get()->first());
+                    ->skip(2)->take(1)->get()->first())
+
+            #============ Mostrar el Ajustes de la pagina ==========
+            ->with('settings', Setting::first())
+
+            #============ Mostrar categoria numero 1 ===============
+            ->with('laravel', Category::find(1))
+
+            #============ Mostrar categoria numero 3 ===============
+            ->with('tuto', Category::find(3));
+
     }
 
 
