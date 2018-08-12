@@ -7,6 +7,7 @@ use App\Post;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Tag;
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
@@ -71,6 +72,7 @@ class PostsController extends Controller
             'featured' => 'uploads/posts/' . $featured_new_name,
             'category_id' => $request->category_id,
             'slug' => str_slug($request->title),
+            'user_id' => Auth::id(),
         ]);
 
         // $post = este post que acabamos decrear

@@ -12,7 +12,7 @@ class Post extends Model
 
     protected $fillable = [
 
-        'title', 'contenido', 'category_id','featured','slug'
+        'title', 'contenido', 'category_id','featured','slug','user_id',
     ];
 
     public function getFeaturedAttribute($featured)
@@ -34,5 +34,10 @@ class Post extends Model
         //Tag  pertenece a muchas categorias
         // el nombre de la clase osea tags db ser en plural
         return $this->belongsToMany(Tag::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
