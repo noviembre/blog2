@@ -42,6 +42,13 @@ Route::get('/post/{slug}', [
     'as' => 'post.single'
 ]);
 
+
+#======== blog.dev/category/cat-1 Pag Categoria ======
+Route::get('/category/{id}',[
+    'uses' => 'FrontEndController@category',
+    'as' => 'category.single'
+]);
+
 Auth::routes();
 
 
