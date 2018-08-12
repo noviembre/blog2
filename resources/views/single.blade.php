@@ -175,6 +175,8 @@
                         </div>
                     </div>
 
+                    @include('includes.disqus')
+
                     <div class="row">
 
                     </div>
