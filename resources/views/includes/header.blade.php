@@ -22,7 +22,10 @@
                     @foreach($categories as $category)
 
                         <li class="">
-                            <a href="">{{ $category->title }}</a>
+
+                            <a href="{{ route('category.single', ['id' => $category->id ]) }}">
+                                {{ $category->title }}
+                            </a>
                         </li>
 
                     @endforeach
